@@ -7,7 +7,9 @@ const Header = () => {
    <header>
     <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
         <Container>
-            <Navbar.Brand href="/">shopify</Navbar.Brand>
+            <Navbar.Brand href="/">
+                <img className="brandlogo px-0.5 " src="https://cdn-icons-png.flaticon.com/512/5968/5968965.png" alt="" srcset="" />
+                shopify</Navbar.Brand>
             <Navbar.Toggle aria-controls='basic-navbar-nav'></Navbar.Toggle>
             <Navbar.Collapse id='basic-navbar-nav'>
                 <Nav className='ms-auto'>
