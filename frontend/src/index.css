@@ -16,3 +16,13 @@ code {
   width: 10%;
   padding-right: 8px;
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+  width: 100%;
+  height: 240px;
+}
