@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #696969;
 }
 
 code {
@@ -19,9 +20,22 @@ code {
 
 a{
   text-decoration: none;
-  color: black;
+  color: #696969;
 }
 
-.card-img, .card-img-bottom, .card-img-top {
-  /* height: 240px; */
+.rating svg{
+  color: #f8ef25
+}
+.rating-text{
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-left: 0.5rem;
+  color: #696969;
+}
+
+.product-title{
+  height: 2.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
