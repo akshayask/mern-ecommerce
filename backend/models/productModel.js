@@ -1,4 +1,4 @@
-import mongoose from mongoose
+import mongoose from 'mongoose'
 
 
 const reviewSchema = mongoose.Schema({
@@ -18,9 +18,8 @@ const reviewSchema = mongoose.Schema({
     Comment:{
         type:String,
         required:true
-    }, 
-        timestamps:true
-    })
+    },
+    },{timestamps:true})
 
 
 const productSchema = new mongoose.Schema(
@@ -51,7 +50,7 @@ const productSchema = new mongoose.Schema(
         required: true
     },
     price:{
-        type:Decimal128,
+        type:Number,
         required: true
     },
     countInStock:{
