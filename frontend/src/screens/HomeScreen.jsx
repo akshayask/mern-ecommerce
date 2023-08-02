@@ -1,23 +1,15 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-// import products from "../products";
 import Product from "../components/Product";
-import { useEffect, useState } from "react";
-import axios from 'axios';
+import { useGetProductsQuery } from "../slices/productsApiSlice";
 
 const HomeScreen = () => {
 
-  const [products, setProducts] = useState([])
-  useEffect(() => {
-    const fetchProduct = async () => {
-      const { data } = await axios.get('/api/products');
-      setProducts(data);
-    }
-    fetchProduct()
-  }, [])
-
+  const { data: products, isLoading, error } = useGetProductsQuery()
   return (
     <>
+    {isLoading ? (<h2>Loading...</h2>) : error ? (<> {error?.data?.message || error.error}</>) : (
+      <>
       <h1>Latest Products</h1>
       <Row>
         {products.map((product) => (
@@ -26,6 +18,8 @@ const HomeScreen = () => {
           </Col>
         ))}
       </Row>
+      </>)
+    }
     </>
   );
 };
