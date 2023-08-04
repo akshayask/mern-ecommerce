@@ -2,7 +2,8 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button, ListGroupItem } from 'react-bootstrap'
-// import products from '../products'
+import Loader from "../components/Loader";
+import Message from '../components/Message';
 import Rating from '../components/Rating'
 import { useGetProductDetailsQuery } from "../slices/productsApiSlice";
 
@@ -14,7 +15,7 @@ const ProductScreen = () => {
 
   return (
     <>
-    {isLoading ? (<h2>Loading...</h2>) : error ? (<> {error?.data?.message || error.error}</>) : (
+    {isLoading ? (<Loader/>) : error ? (<Message variant='danger'> {error?.data?.message || error.error}</Message>) : (
     <>
     <Link className='btn btn-light my-3' to={'/'}>Go back</Link>
     <Row>
